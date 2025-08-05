@@ -1,10 +1,7 @@
 name: CI
-on:
-  workflow_dispatch:
-  push:
-    branches: [main]
+on: [workflow_dispatch, push, pull_request]
 jobs:
-  ok:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - run: echo CI OK
+      - run: echo '✅ CI ran'
