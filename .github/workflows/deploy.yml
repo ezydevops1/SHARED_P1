@@ -3,10 +3,15 @@ on:
   workflow_dispatch:
     inputs:
       environment:
+        description: Target env
+        required: true
+        default: dev
         type: choice
         options: [dev, qa, prod]
+  push:
+    branches: [dev, qa, prod]
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - run: echo Deploying ${{ github.event.inputs.environment }}
+      - run: echo '🚀 Deploy ran'
